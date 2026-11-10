@@ -1,1028 +1,1140 @@
+```html
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurishingal Bean & Spices | Premium Highland Coffee & Cardamom</title>
+    <title>Kurishingal Bean & Spices | Organic Kerala Estate Spices & Coffee</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            dark: '#1c130e',      // Deep Coffee Dark
-                            roast: '#2c1d14',     // Rich Roast Brown
-                            amber: '#8c593b',     // Warm Coffee Amber
-                            gold: '#d4af37',      // Subtle Gold Accent
-                            goldhover: '#b59326',
-                            cardamom: '#3e5c38',  // Rich Cardamom Green
-                            cardamomlight: '#567a4f',
-                            cream: '#fcf8f2',     // Warm Off-white
-                            sand: '#f3ece1'
+                        sage: {
+                            50: '#f4f6f4',
+                            100: '#e3e8e4',
+                            200: '#c7d2c9',
+                            500: '#687e6d',
+                            600: '#4a5d4e',
+                            700: '#3a4b3e',
+                            900: '#233026',
+                        },
+                        sand: {
+                            50: '#fdfbf7',
+                            100: '#f8f4ec',
+                            200: '#f0e8d9',
+                            300: '#e5d7c0',
+                            800: '#685942',
+                        },
+                        terracotta: {
+                            500: '#c07a46',
+                            600: '#a76332',
+                            700: '#8a4e23',
                         }
                     },
                     fontFamily: {
-                        serif: ['Cinzel', 'serif'],
                         sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     }
                 }
             }
         }
     </script>
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #fcf8f2;
-            color: #1c130e;
+        .nature-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(8px);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .font-cinzel {
-            font-family: 'Cinzel', serif;
+        .nature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -8px rgba(58, 75, 62, 0.12);
         }
-        .hero-overlay {
-            background: linear-gradient(180deg, rgba(28, 19, 14, 0.75) 0%, rgba(28, 19, 14, 0.90) 100%);
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 5px;
         }
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f0e8d9;
         }
-        .card-hover:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 25px -5px rgba(44, 29, 20, 0.15), 0 10px 10px -5px rgba(44, 29, 20, 0.04);
-        }
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #1c130e;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #8c593b;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #687e6d;
+            border-radius: 10px;
         }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
+<body class="bg-sand-50 font-sans text-slate-700 antialiased selection:bg-sage-200 flex flex-col min-h-screen">
 
-    <!-- NAVIGATION -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-brand-dark/95 backdrop-blur-md border-b border-brand-amber/20 py-4">
+    <!-- Top Announcement Bar -->
+    <div class="bg-sage-700 text-sand-100 text-xs py-2 px-4 text-center font-medium flex justify-between items-center">
+        <span class="hidden sm:inline-flex items-center"><i class="fa-solid fa-leaf text-sage-200 mr-2"></i> 100% Organic & Farm-Direct Harvest from Kerala Estates</span>
+        <span class="w-full sm:w-auto text-center"><i class="fa-solid fa-truck-fast mr-1.5"></i> Complimentary Free Shipping Across India on Orders Above ₹999</span>
+        <span class="hidden md:inline-block bg-sage-900/40 text-sand-200 px-3 py-0.5 rounded-full border border-sage-500/30 text-[11px] font-mono">CODE: <b>PURENATURAL</b></span>
+    </div>
+
+    <!-- Light Nature-Inspired Header Navigation -->
+    <header class="sticky top-0 z-40 bg-sand-50/90 backdrop-blur-md text-slate-800 shadow-sm border-b border-sand-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between">
-                <!-- Brand Logo -->
-                <a href="#" class="flex items-center gap-3 group">
-                    <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-amber to-brand-gold flex items-center justify-center text-brand-dark font-bold shadow-lg group-hover:scale-105 transition-transform">
-                        <i class="fa-solid font-cinzel text-lg">K</i>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-cinzel font-bold text-lg sm:text-xl text-brand-cream tracking-wide group-hover:text-brand-gold transition-colors">KURISHINGAL</span>
-                        <span class="text-[10px] text-brand-gold tracking-widest uppercase -mt-1 font-semibold">Bean & Spices</span>
-                    </div>
-                </a>
+            <div class="flex items-center justify-between h-20 gap-4">
 
-                <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-8 font-medium text-sm text-brand-sand">
-                    <a href="#about" class="hover:text-brand-gold transition-colors">Our Story</a>
-                    <a href="#products" class="hover:text-brand-gold transition-colors">Products</a>
-                    <a href="#quality" class="hover:text-brand-gold transition-colors">Quality Standard</a>
-                    <a href="#calculator" class="hover:text-brand-gold transition-colors">Estimator</a>
-                    <a href="#reviews" class="hover:text-brand-gold transition-colors">Reviews</a>
-                    <a href="#contact" class="hover:text-brand-gold transition-colors">Contact</a>
+                <!-- Logo & Brand -->
+                <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
+                    <div class="bg-sage-600 text-white p-2.5 rounded-2xl shadow-md flex items-center justify-center">
+                        <i class="fa-solid fa-seedling text-lg sm:text-xl"></i>
+                    </div>
+                    <div>
+                        <div class="font-serif font-bold text-xl sm:text-2xl tracking-tight text-sage-900 leading-tight">
+                            Kurishingal <span class="text-terracotta-500 font-normal italic">Spices</span>
+                        </div>
+                        <div class="text-[10px] sm:text-xs text-sage-600 font-medium tracking-widest uppercase">
+                            Single-Origin Bean & Spices
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Header Actions -->
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#inquiry" class="px-5 py-2.5 rounded-full bg-brand-gold hover:bg-brand-goldhover text-brand-dark font-semibold text-sm transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2">
-                        <i class="fa-solid fa-paper-plane text-xs"></i>
-                        <span>Order Request</span>
-                    </a>
+                <!-- Search Input -->
+                <div class="flex-1 max-w-xl hidden md:block">
+                    <div class="relative flex items-center">
+                        <input type="text" id="searchInput" onkeyup="handleSearch()" placeholder="Search Jumbo Cardamom, Wayanad Coffee, Black Pepper..." 
+                               class="w-full py-2.5 pl-5 pr-12 rounded-full text-slate-800 bg-white border border-sand-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-sage-500 text-xs sm:text-sm shadow-sm">
+                        <button onclick="handleSearch()" class="absolute right-1.5 top-1.5 bottom-1.5 bg-sage-600 hover:bg-sage-700 text-white px-4 rounded-full transition font-semibold text-xs">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden text-brand-sand hover:text-brand-gold focus:outline-none p-2">
-                    <i class="fa-solid fa-bars text-xl"></i>
+                <!-- Navigation Action Controls -->
+                <div class="flex items-center space-x-4">
+                    <button class="md:hidden text-sage-700 p-2 rounded-lg" onclick="toggleMobileSearch()">
+                        <i class="fa-solid fa-magnifying-glass text-lg"></i>
+                    </button>
+
+                    <button onclick="openModal('userModal')" class="hidden sm:flex items-center space-x-2 text-xs font-semibold text-slate-700 hover:text-sage-700 transition uppercase tracking-wider">
+                        <i class="fa-regular fa-user text-base text-sage-600"></i>
+                        <span>Account</span>
+                    </button>
+
+                    <button onclick="toggleCartDrawer()" class="relative flex items-center space-x-2.5 bg-sage-600 hover:bg-sage-700 text-white font-bold px-4 py-2.5 rounded-2xl transition shadow-md">
+                        <i class="fa-solid fa-basket-shopping text-base"></i>
+                        <span class="hidden sm:inline text-xs uppercase tracking-wider">Cart</span>
+                        <span id="cartCountBadge" class="bg-terracotta-500 text-white text-[11px] rounded-full h-5 w-5 flex items-center justify-center font-bold shadow-sm">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Search Bar -->
+            <div id="mobileSearchBar" class="hidden md:hidden pb-4">
+                <input type="text" id="searchInputMobile" onkeyup="handleSearchMobile()" placeholder="Search Spices, Coffee..." 
+                       class="w-full py-2 pl-4 pr-10 rounded-xl text-slate-800 bg-white border border-sand-200 placeholder-slate-400 text-xs">
+            </div>
+        </div>
+
+        <!-- Category Navigation Bar -->
+        <nav class="bg-sand-100/80 border-t border-sand-200 text-xs overflow-x-auto custom-scrollbar">
+            <div class="max-w-7xl mx-auto px-4 flex space-x-8 py-3 whitespace-nowrap font-medium uppercase tracking-wider text-slate-600">
+                <button onclick="filterCategory('All')" class="category-btn text-sage-700 font-bold flex items-center gap-2 hover:text-sage-900 transition">
+                    <i class="fa-solid fa-border-all"></i> All Collections
+                </button>
+                <button onclick="filterCategory('Cardamom')" class="category-btn hover:text-sage-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-leaf text-sage-600"></i> Green Cardamom
+                </button>
+                <button onclick="filterCategory('Coffee')" class="category-btn hover:text-sage-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-mug-hot text-terracotta-500"></i> Artisanal Coffee
+                </button>
+                <button onclick="filterCategory('Spices')" class="category-btn hover:text-sage-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-pepper-hot text-amber-600"></i> Whole Spices
+                </button>
+                <button onclick="filterCategory('Combos')" class="category-btn hover:text-sage-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-gift text-sage-600"></i> Estate Gift Packs
                 </button>
             </div>
-        </div>
+        </nav>
+    </header>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-roast border-b border-brand-amber/20 px-4 pt-4 pb-6 space-y-3 mt-4">
-            <a href="#about" class="block py-2 text-brand-cream hover:text-brand-gold border-b border-brand-amber/10">Our Story</a>
-            <a href="#products" class="block py-2 text-brand-cream hover:text-brand-gold border-b border-brand-amber/10">Products</a>
-            <a href="#quality" class="block py-2 text-brand-cream hover:text-brand-gold border-b border-brand-amber/10">Quality Standard</a>
-            <a href="#calculator" class="block py-2 text-brand-cream hover:text-brand-gold border-b border-brand-amber/10">Estimator</a>
-            <a href="#reviews" class="block py-2 text-brand-cream hover:text-brand-gold border-b border-brand-amber/10">Reviews</a>
-            <a href="#contact" class="block py-2 text-brand-cream hover:text-brand-gold border-b border-brand-amber/10">Contact</a>
-            <a href="#inquiry" class="block text-center mt-4 w-full py-3 rounded-full bg-brand-gold text-brand-dark font-semibold">Order Request</a>
-        </div>
-    </nav>
+    <!-- Light Nature Hero Banner -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-10">
 
-    <!-- HERO SECTION -->
-    <section class="relative min-h-screen flex items-center pt-24 pb-16 bg-brand-dark overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=1920&q=80" alt="Coffee Estate" class="w-full h-full object-cover object-center opacity-40">
-            <div class="hero-overlay absolute inset-0"></div>
-        </div>
-
-        <!-- Decorative Glow -->
-        <div class="absolute top-1/4 -left-20 w-96 h-96 bg-brand-amber/20 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-10 right-0 w-96 h-96 bg-brand-cardamom/20 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto">
-            <div class="grid md:grid-cols-12 gap-12 items-center">
-                
-                <div class="md:col-span-7 space-y-6 text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-amber/20 border border-brand-gold/30 text-brand-gold text-xs uppercase tracking-widest font-semibold">
-                        <i class="fa-solid fa-leaf text-brand-cardamomlight"></i>
-                        Single-Origin Highland Harvest
-                    </div>
-                    
-                    <h1 class="font-cinzel text-4xl sm:text-5xl lg:text-6xl font-bold text-brand-cream leading-tight">
-                        Crafted by Earth.<br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-amber-200 to-brand-amber">Perfected by Passion.</span>
-                    </h1>
-                    
-                    <p class="text-brand-sand/90 text-base sm:text-lg max-w-2xl font-light leading-relaxed">
-                        Welcome to <strong class="text-brand-cream">Kurishingal Bean & Spices</strong>. We cultivate, hand-pick, and carefully process ultra-premium highland Arabica & Robusta coffee beans and fresh aromatic Green Cardamom directly from high-altitude estates.
-                    </p>
-
-                    <div class="pt-4 flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4">
-                        <a href="#products" class="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-brand-gold to-brand-amber text-brand-dark font-bold text-sm tracking-wider uppercase hover:brightness-110 transition-all shadow-lg hover:shadow-brand-gold/20 flex items-center justify-center gap-3">
-                            <span>Explore Harvest</span>
-                            <i class="fa-solid fa-arrow-right text-xs"></i>
-                        </a>
-                        <a href="#inquiry" class="w-full sm:w-auto px-8 py-4 rounded-full border border-brand-gold/50 text-brand-cream hover:bg-brand-gold/10 font-medium text-sm tracking-wider uppercase transition-all flex items-center justify-center gap-2">
-                            <i class="fa-solid fa-envelope"></i>
-                            <span>Request Wholesale Quote</span>
-                        </a>
-                    </div>
-
-                    <!-- Quick Metrics -->
-                    <div class="pt-10 grid grid-cols-3 gap-6 border-t border-brand-amber/20 max-w-xl mx-auto md:mx-0">
-                        <div>
-                            <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">3500+</span>
-                            <span class="text-xs text-brand-sand/70 uppercase tracking-wider">Feet Altitude</span>
-                        </div>
-                        <div>
-                            <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">100%</span>
-                            <span class="text-xs text-brand-sand/70 uppercase tracking-wider">Hand-Sorted</span>
-                        </div>
-                        <div>
-                            <span class="block font-cinzel text-2xl sm:text-3xl font-bold text-brand-gold">Grade A</span>
-                            <span class="text-xs text-brand-sand/70 uppercase tracking-wider">Export Quality</span>
-                        </div>
-                    </div>
+        <section class="relative rounded-3xl overflow-hidden shadow-lg bg-gradient-to-r from-sand-200 via-sand-100 to-sage-100 text-slate-800 min-h-[360px] sm:min-h-[420px] flex items-center border border-sand-200">
+            <div class="absolute inset-0 bg-gradient-to-r from-sand-50/90 via-sand-50/60 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1600&q=80" alt="Kerala Spice Plantation" class="absolute inset-0 w-full h-full object-cover z-0 opacity-40">
+            
+            <div class="relative z-20 max-w-2xl p-6 sm:p-12 space-y-4">
+                <div class="inline-flex items-center gap-2 bg-sage-100 border border-sage-200 text-sage-700 font-semibold text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full">
+                    <i class="fa-solid fa-sun text-amber-500"></i> Direct Farm Harvest • Western Ghats
                 </div>
-
-                <!-- Hero Visual Box -->
-                <div class="md:col-span-5 relative">
-                    <div class="relative mx-auto max-w-sm sm:max-w-md rounded-2xl overflow-hidden border border-brand-gold/30 p-3 bg-brand-roast/60 backdrop-blur-md shadow-2xl">
-                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80" alt="Freshly Roasted Coffee Beans & Spices" class="w-full h-80 sm:h-96 object-cover rounded-xl">
-                        
-                        <!-- Floating Badge Card -->
-                        <div class="absolute -bottom-4 -left-4 bg-brand-dark/95 border border-brand-gold/40 p-4 rounded-xl shadow-xl flex items-center gap-3 max-w-[220px]">
-                            <div class="w-10 h-10 rounded-full bg-brand-cardamom flex items-center justify-center text-white shrink-0">
-                                <i class="fa-solid fa-seedling"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-brand-cream">Aromatic Green Pods</p>
-                                <p class="text-[10px] text-brand-sand/80">Rich natural oils retained</p>
-                            </div>
-                        </div>
-
-                        <!-- Floating Badge Card Right -->
-                        <div class="absolute -top-4 -right-4 bg-brand-dark/95 border border-brand-gold/40 p-4 rounded-xl shadow-xl flex items-center gap-3 max-w-[200px]">
-                            <div class="w-10 h-10 rounded-full bg-brand-amber flex items-center justify-center text-white shrink-0">
-                                <i class="fa-solid fa-mug-hot"></i>
-                            </div>
-                            <div>
-                                <p class="text-xs font-bold text-brand-cream">Artisanal Roast</p>
-                                <p class="text-[10px] text-brand-sand/80">Small batch perfection</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT / BRAND STORY SECTION -->
-    <section id="about" class="py-20 bg-brand-cream relative">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <!-- Left Story Image Composite -->
-                <div class="relative">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80" alt="Coffee plantation" class="rounded-2xl shadow-md w-full h-64 object-cover">
-                        <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337cc?auto=format&fit=crop&w=600&q=80" alt="Fresh Cardamom Pods" class="rounded-2xl shadow-md w-full h-64 object-cover mt-8">
-                    </div>
-                    <div class="absolute inset-0 border-2 border-brand-gold/20 rounded-3xl -m-4 pointer-events-none hidden sm:block"></div>
-                </div>
-
-                <!-- Right Text -->
-                <div class="space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-amber/10 text-brand-amber font-semibold text-xs uppercase tracking-widest">
-                        Heritage & Quality
-                    </div>
-                    <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-dark leading-tight">
-                        Rooted in Highland Tradition, Crafted for True Connoisseurs.
-                    </h2>
-                    <p class="text-brand-dark/80 leading-relaxed font-light">
-                        At <strong class="font-semibold text-brand-roast">Kurishingal Bean & Spices</strong>, our legacy is built on the rich, misty slopes of high-altitude plantations. For decades, our family-owned estate has nurtured specialty coffee and rich green cardamom under optimal microclimates.
-                    </p>
-                    <p class="text-brand-dark/80 leading-relaxed font-light">
-                        Every cherry is hand-selected at peak ripeness, sun-dried naturally, and roasted or packed in small batches to preserve its natural essential oils, complex aromas, and distinct flavour profiles.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-4 pt-4">
-                        <div class="p-4 rounded-xl bg-white border border-brand-amber/15 shadow-sm">
-                            <i class="fa-solid fa-sun text-brand-gold text-xl mb-2"></i>
-                            <h3 class="font-bold text-sm text-brand-dark">Sun-Dried Drying</h3>
-                            <p class="text-xs text-brand-dark/70 mt-1">Preserving natural sweetness & fruitiness.</p>
-                        </div>
-                        <div class="p-4 rounded-xl bg-white border border-brand-amber/15 shadow-sm">
-                            <i class="fa-solid fa-tree text-brand-cardamom text-xl mb-2"></i>
-                            <h3 class="font-bold text-sm text-brand-dark">Shade-Grown Harvest</h3>
-                            <p class="text-xs text-brand-dark/70 mt-1">Sustainably cultivated under forest canopy.</p>
-                        </div>
-                    </div>
+                <h1 class="text-3xl sm:text-5xl font-serif font-bold text-sage-900 leading-tight">
+                    Pure & Earthy <span class="text-terracotta-500 italic font-normal">Kerala Spices & Coffee</span>
+                </h1>
+                <p class="text-slate-600 text-xs sm:text-base leading-relaxed">
+                    Sourced directly from the lush high-range estates of Kurishingal. Enjoy handpicked 8mm Extra Bold Cardamom, organic High-Piperine Black Pepper, and freshly roasted coffee delivered directly to your home.
+                </p>
+                <div class="flex flex-wrap gap-3 pt-2">
+                    <button onclick="scrollToProducts()" class="bg-sage-600 hover:bg-sage-700 text-white font-bold px-6 py-3 rounded-2xl shadow-md transition transform hover:-translate-y-0.5 text-xs sm:text-sm uppercase tracking-wider">
+                        <i class="fa-solid fa-store mr-2"></i> Shop Fresh Harvest
+                    </button>
+                    <button onclick="openDeliveryCheckerModal()" class="bg-white hover:bg-sand-100 text-sage-700 border border-sage-200 font-semibold px-5 py-3 rounded-2xl transition text-xs sm:text-sm shadow-sm">
+                        <i class="fa-solid fa-location-dot text-terracotta-500 mr-2"></i> Pincode Check
+                    </button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- FEATURED PRODUCTS SECTION -->
-    <section id="products" class="py-20 bg-brand-sand/50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-4">
-                <span class="text-brand-amber font-semibold text-xs uppercase tracking-widest">Our Fine Selections</span>
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-dark">Signature Beans & Cardamom</h2>
-                <p class="text-brand-dark/70 font-light">Explore our curated selection of premium green beans, custom roasts, and Grade-A whole cardamom pods. Available in retail packs and bulk wholesale quantities.</p>
-                
+        <!-- Trust Features Grid -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 bg-white p-6 rounded-3xl shadow-sm border border-sand-200">
+            <div class="flex items-center space-x-3.5 p-2">
+                <div class="text-sage-600 text-2xl bg-sage-50 p-3 rounded-2xl">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-800">100% Export Quality</h4>
+                    <p class="text-[11px] text-slate-500">Graded & Hand-Sorted</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3.5 p-2">
+                <div class="text-terracotta-500 text-2xl bg-orange-50 p-3 rounded-2xl">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-800">Express Shipping</h4>
+                    <p class="text-[11px] text-slate-500">3-5 Days All India Delivery</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3.5 p-2">
+                <div class="text-green-600 text-2xl bg-green-50 p-3 rounded-2xl">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-800">Direct WhatsApp</h4>
+                    <p class="text-[11px] text-slate-500">Instant Order Support</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3.5 p-2">
+                <div class="text-amber-700 text-2xl bg-amber-50 p-3 rounded-2xl">
+                    <i class="fa-solid fa-money-bill-transfer"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-xs sm:text-sm text-slate-800">UPI, Cards & COD</h4>
+                    <p class="text-[11px] text-slate-500">Secure Payment Gateways</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Explorer Section -->
+        <section id="productExplorer" class="flex flex-col lg:flex-row gap-8">
+
+            <!-- Side Filters -->
+            <aside class="w-full lg:w-72 bg-white p-6 rounded-3xl shadow-sm border border-sand-200 flex-shrink-0 space-y-6 h-fit">
+                <div class="flex justify-between items-center pb-4 border-b border-sand-200">
+                    <h3 class="font-serif font-bold text-base text-slate-800 flex items-center gap-2">
+                        <i class="fa-solid fa-sliders text-sage-600"></i> Filter & Refine
+                    </h3>
+                    <button onclick="resetFilters()" class="text-xs text-terracotta-600 font-semibold hover:underline">Reset</button>
+                </div>
+
                 <!-- Category Filters -->
-                <div class="flex justify-center gap-2 pt-6 flex-wrap" id="product-filters">
-                    <button onclick="filterProducts('all')" class="filter-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all bg-brand-dark text-brand-cream shadow-sm" data-filter="all">ALL PRODUCTS</button>
-                    <button onclick="filterProducts('coffee')" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all bg-white text-brand-dark hover:bg-brand-amber/10 border border-brand-amber/20" data-filter="coffee">COFFEE BEANS</button>
-                    <button onclick="filterProducts('cardamom')" class="filter-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition-all bg-white text-brand-dark hover:bg-brand-cardamom/10 border border-brand-cardamom/20" data-filter="cardamom">GREEN CARDAMOM</button>
+                <div>
+                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-wider mb-3">Product Category</h4>
+                    <div class="space-y-2 text-xs font-medium text-slate-700">
+                        <label class="flex items-center space-x-3 cursor-pointer hover:text-sage-700">
+                            <input type="radio" name="catFilter" value="All" checked onclick="filterCategory('All')" class="text-sage-600 focus:ring-sage-500">
+                            <span>All Spices & Coffee</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer hover:text-sage-700">
+                            <input type="radio" name="catFilter" value="Cardamom" onclick="filterCategory('Cardamom')" class="text-sage-600 focus:ring-sage-500">
+                            <span>Green Cardamom</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer hover:text-sage-700">
+                            <input type="radio" name="catFilter" value="Coffee" onclick="filterCategory('Coffee')" class="text-sage-600 focus:ring-sage-500">
+                            <span>Coffee Beans & Ground</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer hover:text-sage-700">
+                            <input type="radio" name="catFilter" value="Spices" onclick="filterCategory('Spices')" class="text-sage-600 focus:ring-sage-500">
+                            <span>Black Pepper & Whole Spices</span>
+                        </label>
+                        <label class="flex items-center space-x-3 cursor-pointer hover:text-sage-700">
+                            <input type="radio" name="catFilter" value="Combos" onclick="filterCategory('Combos')" class="text-sage-600 focus:ring-sage-500">
+                            <span>Estate Gift Combos</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Price Filter Slider -->
+                <div>
+                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-wider mb-3">Max Price: ₹<span id="priceValue">2000</span></h4>
+                    <input type="range" id="priceRange" min="200" max="2000" step="50" value="2000" oninput="applyPriceFilter(this.value)"
+                           class="w-full accent-sage-600 cursor-pointer">
+                    <div class="flex justify-between text-[11px] text-slate-400 mt-1 font-bold">
+                        <span>₹200</span>
+                        <span>₹2,000</span>
+                    </div>
+                </div>
+
+                <!-- Sort By Selector -->
+                <div>
+                    <h4 class="font-bold text-xs text-slate-400 uppercase tracking-wider mb-3">Sort Collection</h4>
+                    <select id="sortSelect" onchange="sortProducts()" class="w-full border border-sand-200 rounded-xl p-3 text-xs text-slate-700 font-semibold focus:ring-2 focus:ring-sage-500 outline-none bg-sand-50">
+                        <option value="featured">Featured / Best Sellers</option>
+                        <option value="lowToHigh">Price: Low to High</option>
+                        <option value="highToLow">Price: High to Low</option>
+                        <option value="rating">Top Customer Rated</option>
+                    </select>
+                </div>
+            </aside>
+
+            <!-- Product Grid Window -->
+            <div class="flex-1">
+                <div class="flex justify-between items-center mb-6">
+                    <h2 class="font-serif font-bold text-2xl text-sage-900">
+                        Estate Harvest <span id="categoryLabel" class="text-slate-500 text-sm font-sans font-normal">(All Items)</span>
+                    </h2>
+                    <span id="productCount" class="text-xs text-slate-500 font-semibold uppercase tracking-wider">8 Items</span>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Dynamic Product Cards injected via JS -->
                 </div>
             </div>
+        </section>
 
-            <!-- Products Grid -->
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12" id="product-grid">
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-sage-900 text-sand-200 mt-20 border-t border-sage-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
                 
-                <!-- Product Card 1 -->
-                <div class="product-card coffee bg-white rounded-2xl overflow-hidden border border-brand-amber/15 shadow-sm card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-60 overflow-hidden bg-brand-roast">
-                            <img src="https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=700&q=80" alt="Arabica Coffee Beans" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <span class="absolute top-3 right-3 bg-brand-gold text-brand-dark font-bold text-[10px] uppercase px-3 py-1 rounded-full shadow">Highland Single-Origin</span>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-sage-600 text-white p-2 rounded-xl">
+                            <i class="fa-solid fa-seedling"></i>
                         </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 text-brand-gold text-xs mb-2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="text-brand-dark/50 text-[11px] ml-1">(4.9 / 5)</span>
-                            </div>
-                            <h3 class="font-cinzel font-bold text-xl text-brand-dark mb-1">Kurishingal Arabica Gold</h3>
-                            <p class="text-xs text-brand-amber font-semibold uppercase mb-3">Medium Roast • Whole Bean</p>
-                            <p class="text-brand-dark/70 text-sm font-light mb-4 line-clamp-2">
-                                Complex body with distinct caramel, dark chocolate, and subtle citrus acidity. Handpicked at 3,800ft altitude.
-                            </p>
-                        </div>
+                        <span class="font-serif font-bold text-xl text-white tracking-tight">Kurishingal Spices</span>
                     </div>
-                    <div class="px-6 pb-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-auto">
-                        <div>
-                            <span class="text-xs text-brand-dark/50 block">From</span>
-                            <span class="font-cinzel font-bold text-lg text-brand-dark">$18.50 <span class="text-xs font-normal text-brand-dark/60">/ 500g</span></span>
-                        </div>
-                        <button onclick="openQuickView('arabica')" class="px-4 py-2 rounded-xl bg-brand-roast hover:bg-brand-dark text-brand-cream font-medium text-xs transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-eye"></i> Quick View
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 2 -->
-                <div class="product-card coffee bg-white rounded-2xl overflow-hidden border border-brand-amber/15 shadow-sm card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-60 overflow-hidden bg-brand-roast">
-                            <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=700&q=80" alt="Espresso Dark Roast" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <span class="absolute top-3 right-3 bg-brand-amber text-white font-bold text-[10px] uppercase px-3 py-1 rounded-full shadow">Bold & Smoky</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 text-brand-gold text-xs mb-2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="text-brand-dark/50 text-[11px] ml-1">(5.0 / 5)</span>
-                            </div>
-                            <h3 class="font-cinzel font-bold text-xl text-brand-dark mb-1">Estate Reserve Espresso</h3>
-                            <p class="text-xs text-brand-amber font-semibold uppercase mb-3">Dark Roast • Whole / Ground</p>
-                            <p class="text-brand-dark/70 text-sm font-light mb-4 line-clamp-2">
-                                Rich cremma, heavy body with tasting notes of toasted hazelnut, spicy clove, and bittersweet cocoa.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-auto">
-                        <div>
-                            <span class="text-xs text-brand-dark/50 block">From</span>
-                            <span class="font-cinzel font-bold text-lg text-brand-dark">$16.00 <span class="text-xs font-normal text-brand-dark/60">/ 500g</span></span>
-                        </div>
-                        <button onclick="openQuickView('espresso')" class="px-4 py-2 rounded-xl bg-brand-roast hover:bg-brand-dark text-brand-cream font-medium text-xs transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-eye"></i> Quick View
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 3 -->
-                <div class="product-card cardamom bg-white rounded-2xl overflow-hidden border border-brand-cardamom/20 shadow-sm card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-60 overflow-hidden bg-brand-cardamom">
-                            <img src="https://images.unsplash.com/photo-1599785209707-a456fc1337cc?auto=format&fit=crop&w=700&q=80" alt="Green Cardamom Pods" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <span class="absolute top-3 right-3 bg-brand-cardamom text-white font-bold text-[10px] uppercase px-3 py-1 rounded-full shadow">8mm+ Jumbo Pods</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 text-brand-gold text-xs mb-2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="text-brand-dark/50 text-[11px] ml-1">(4.9 / 5)</span>
-                            </div>
-                            <h3 class="font-cinzel font-bold text-xl text-brand-dark mb-1">Kurishingal Royal Cardamom</h3>
-                            <p class="text-xs text-brand-cardamom font-semibold uppercase mb-3">Grade A Green • Whole Pods</p>
-                            <p class="text-brand-dark/70 text-sm font-light mb-4 line-clamp-2">
-                                Hand-harvested green cardamom pods packed with natural volatile oils. Intensely aromatic, menthol, and citrus notes.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-auto">
-                        <div>
-                            <span class="text-xs text-brand-dark/50 block">From</span>
-                            <span class="font-cinzel font-bold text-lg text-brand-dark">$24.00 <span class="text-xs font-normal text-brand-dark/60">/ 250g</span></span>
-                        </div>
-                        <button onclick="openQuickView('cardamom')" class="px-4 py-2 rounded-xl bg-brand-cardamom hover:bg-brand-cardamomlight text-white font-medium text-xs transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-eye"></i> Quick View
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 4 -->
-                <div class="product-card coffee bg-white rounded-2xl overflow-hidden border border-brand-amber/15 shadow-sm card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-60 overflow-hidden bg-brand-roast">
-                            <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?auto=format&fit=crop&w=700&q=80" alt="Green Unroasted Coffee Beans" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <span class="absolute top-3 right-3 bg-gray-800 text-white font-bold text-[10px] uppercase px-3 py-1 rounded-full shadow">Raw Green Coffee</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 text-brand-gold text-xs mb-2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star-half-stroke"></i>
-                                <span class="text-brand-dark/50 text-[11px] ml-1">(4.8 / 5)</span>
-                            </div>
-                            <h3 class="font-cinzel font-bold text-xl text-brand-dark mb-1">Micro-Lot Raw Robusta</h3>
-                            <p class="text-xs text-brand-amber font-semibold uppercase mb-3">Unroasted • Green Beans</p>
-                            <p class="text-brand-dark/70 text-sm font-light mb-4 line-clamp-2">
-                                Premium high-altitude Robusta green beans designed for commercial micro-roasters seeking high caffeine & crema depth.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-auto">
-                        <div>
-                            <span class="text-xs text-brand-dark/50 block">Bulk Wholesale</span>
-                            <span class="font-cinzel font-bold text-lg text-brand-dark">$11.50 <span class="text-xs font-normal text-brand-dark/60">/ kg</span></span>
-                        </div>
-                        <button onclick="openQuickView('robusta')" class="px-4 py-2 rounded-xl bg-brand-roast hover:bg-brand-dark text-brand-cream font-medium text-xs transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-eye"></i> Quick View
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 5 -->
-                <div class="product-card cardamom bg-white rounded-2xl overflow-hidden border border-brand-cardamom/20 shadow-sm card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-60 overflow-hidden bg-brand-cardamom">
-                            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=700&q=80" alt="Coarse Ground Spices & Cardamom Powder" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <span class="absolute top-3 right-3 bg-brand-cardamomlight text-white font-bold text-[10px] uppercase px-3 py-1 rounded-full shadow">Pure Extract Quality</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 text-brand-gold text-xs mb-2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="text-brand-dark/50 text-[11px] ml-1">(4.9 / 5)</span>
-                            </div>
-                            <h3 class="font-cinzel font-bold text-xl text-brand-dark mb-1">Artisan Cardamom Seed Powder</h3>
-                            <p class="text-xs text-brand-cardamom font-semibold uppercase mb-3">Freshly De-hulled & Ground</p>
-                            <p class="text-brand-dark/70 text-sm font-light mb-4 line-clamp-2">
-                                100% pure decorticated cardamom seed ground under cold milling to retain natural fragrance and flavor integrity.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-auto">
-                        <div>
-                            <span class="text-xs text-brand-dark/50 block">From</span>
-                            <span class="font-cinzel font-bold text-lg text-brand-dark">$19.00 <span class="text-xs font-normal text-brand-dark/60">/ 200g</span></span>
-                        </div>
-                        <button onclick="openQuickView('cardamompowder')" class="px-4 py-2 rounded-xl bg-brand-cardamom hover:bg-brand-cardamomlight text-white font-medium text-xs transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-eye"></i> Quick View
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product Card 6 -->
-                <div class="product-card coffee bg-white rounded-2xl overflow-hidden border border-brand-amber/15 shadow-sm card-hover flex flex-col justify-between">
-                    <div>
-                        <div class="relative h-60 overflow-hidden bg-brand-roast">
-                            <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80" alt="Gift & Sampler Box" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
-                            <span class="absolute top-3 right-3 bg-brand-gold text-brand-dark font-bold text-[10px] uppercase px-3 py-1 rounded-full shadow">Gift Set</span>
-                        </div>
-                        <div class="p-6">
-                            <div class="flex items-center gap-1 text-brand-gold text-xs mb-2">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <span class="text-brand-dark/50 text-[11px] ml-1">(5.0 / 5)</span>
-                            </div>
-                            <h3 class="font-cinzel font-bold text-xl text-brand-dark mb-1">Kurishingal Heritage Gift Box</h3>
-                            <p class="text-xs text-brand-amber font-semibold uppercase mb-3">Sampler • Coffee + Cardamom</p>
-                            <p class="text-brand-dark/70 text-sm font-light mb-4 line-clamp-2">
-                                Includes 250g Arabica Gold, 250g Espresso Reserve, and 100g Jumbo Green Cardamom pods packaged in a handcrafted wooden gift box.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="px-6 pb-6 pt-0 border-t border-gray-100 flex items-center justify-between mt-auto">
-                        <div>
-                            <span class="text-xs text-brand-dark/50 block">Box Price</span>
-                            <span class="font-cinzel font-bold text-lg text-brand-dark">$45.00</span>
-                        </div>
-                        <button onclick="openQuickView('giftbox')" class="px-4 py-2 rounded-xl bg-brand-roast hover:bg-brand-dark text-brand-cream font-medium text-xs transition-colors flex items-center gap-2">
-                            <i class="fa-solid fa-eye"></i> Quick View
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE ESTIMATOR / CALCULATOR SECTION -->
-    <section id="calculator" class="py-20 bg-brand-dark text-brand-cream relative overflow-hidden">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-brand-roast/90 border border-brand-gold/30 rounded-3xl p-6 sm:p-10 backdrop-blur-md shadow-2xl">
-                
-                <div class="text-center max-w-2xl mx-auto mb-10">
-                    <span class="text-brand-gold font-semibold text-xs uppercase tracking-widest">Instant Price Estimator</span>
-                    <h2 class="font-cinzel text-3xl font-bold text-brand-cream mt-2">Calculate Your Order Estimate</h2>
-                    <p class="text-brand-sand/70 text-sm mt-2">Get an immediate estimate for retail or bulk wholesale coffee bean and spice orders.</p>
-                </div>
-
-                <div class="grid md:grid-cols-2 gap-8 items-center">
-                    <!-- Controls -->
-                    <div class="space-y-6">
-                        <div>
-                            <label class="block text-xs uppercase font-semibold text-brand-sand mb-2">Select Product Type</label>
-                            <select id="calc-product" onchange="calculateEstimate()" class="w-full bg-brand-dark border border-brand-amber/40 rounded-xl px-4 py-3 text-sm text-brand-cream focus:outline-none focus:border-brand-gold">
-                                <option value="18.50" data-unit="kg">Kurishingal Arabica Gold ($18.50/kg)</option>
-                                <option value="16.00" data-unit="kg">Estate Reserve Espresso ($16.00/kg)</option>
-                                <option value="42.00" data-unit="kg">Grade-A Green Cardamom ($42.00/kg)</option>
-                                <option value="11.50" data-unit="kg">Micro-Lot Raw Robusta ($11.50/kg)</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <div class="flex justify-between text-xs uppercase font-semibold text-brand-sand mb-2">
-                                <span>Order Quantity (Kilograms)</span>
-                                <span id="calc-qty-label" class="text-brand-gold font-bold text-sm">10 kg</span>
-                            </div>
-                            <input type="range" id="calc-qty" min="1" max="200" value="10" oninput="calculateEstimate()" class="w-full accent-brand-gold bg-brand-dark rounded-lg h-2 cursor-pointer">
-                            <div class="flex justify-between text-[10px] text-brand-sand/50 mt-1">
-                                <span>1 kg (Sample)</span>
-                                <span>50 kg</span>
-                                <span>200 kg+ (Bulk)</span>
-                            </div>
-                        </div>
-
-                        <div class="bg-brand-dark/50 p-4 rounded-xl border border-brand-amber/20 space-y-2">
-                            <div class="flex items-center gap-2 text-xs text-brand-sand/80">
-                                <i class="fa-solid fa-truck-fast text-brand-gold"></i>
-                                <span>Bulk orders above 50 kg qualify for free freight delivery.</span>
-                            </div>
-                            <div class="flex items-center gap-2 text-xs text-brand-sand/80">
-                                <i class="fa-solid fa-percent text-brand-gold"></i>
-                                <span id="discount-note">10% tier discount applies for 10kg+</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Summary Box -->
-                    <div class="bg-gradient-to-br from-brand-dark to-brand-roast p-8 rounded-2xl border border-brand-gold/30 flex flex-col justify-between text-center md:text-left h-full">
-                        <div>
-                            <span class="text-xs uppercase tracking-widest text-brand-sand/60">Estimated Total Cost</span>
-                            <div class="font-cinzel font-bold text-4xl sm:text-5xl text-brand-gold mt-2 mb-1" id="calc-total">$166.50</div>
-                            <p class="text-xs text-brand-sand/70" id="calc-breakdown">Includes bulk tier discount of $18.50</p>
-                        </div>
-
-                        <div class="mt-8 space-y-3">
-                            <button onclick="prefillInquiryFromCalc()" class="w-full py-3.5 rounded-xl bg-brand-gold hover:bg-brand-goldhover text-brand-dark font-bold text-sm uppercase tracking-wider transition-all shadow-lg">
-                                Lock In This Quote
-                            </button>
-                            <p class="text-[11px] text-center text-brand-sand/50">Final price may vary based on exact custom roast profiles and shipping location.</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- QUALITY COMMITMENT / PROCESS -->
-    <section id="quality" class="py-20 bg-brand-cream">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <span class="text-brand-amber font-semibold text-xs uppercase tracking-widest">Purity & Precision</span>
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-dark mt-1">Our Farm-to-Cup Process</h2>
-                <p class="text-brand-dark/70 font-light mt-2">Every step is meticulously monitored to guarantee unmatched freshness and rich aromas.</p>
-            </div>
-
-            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Step 1 -->
-                <div class="bg-white p-6 rounded-2xl border border-brand-amber/15 shadow-sm relative">
-                    <div class="w-12 h-12 rounded-xl bg-brand-amber/10 text-brand-amber font-cinzel font-bold text-xl flex items-center justify-center mb-4">01</div>
-                    <h3 class="font-cinzel font-bold text-lg text-brand-dark mb-2">Selective Handpicking</h3>
-                    <p class="text-brand-dark/70 text-xs font-light leading-relaxed">Only ripe red coffee cherries and vibrant green cardamom pods are picked manually by experienced harvesters.</p>
-                </div>
-                <!-- Step 2 -->
-                <div class="bg-white p-6 rounded-2xl border border-brand-amber/15 shadow-sm relative">
-                    <div class="w-12 h-12 rounded-xl bg-brand-amber/10 text-brand-amber font-cinzel font-bold text-xl flex items-center justify-center mb-4">02</div>
-                    <h3 class="font-cinzel font-bold text-lg text-brand-dark mb-2">Natural Sun Curing</h3>
-                    <p class="text-brand-dark/70 text-xs font-light leading-relaxed">Beans and spices are naturally dried on raised bamboo beds under mountain sunlight to retain innate sugars.</p>
-                </div>
-                <!-- Step 3 -->
-                <div class="bg-white p-6 rounded-2xl border border-brand-amber/15 shadow-sm relative">
-                    <div class="w-12 h-12 rounded-xl bg-brand-amber/10 text-brand-amber font-cinzel font-bold text-xl flex items-center justify-center mb-4">03</div>
-                    <h3 class="font-cinzel font-bold text-lg text-brand-dark mb-2">Triple Sorting & Grading</h3>
-                    <p class="text-brand-dark/70 text-xs font-light leading-relaxed">Electronic and optical sorting removes defectives, leaving only Grade-A uniform size and density beans.</p>
-                </div>
-                <!-- Step 4 -->
-                <div class="bg-white p-6 rounded-2xl border border-brand-amber/15 shadow-sm relative">
-                    <div class="w-12 h-12 rounded-xl bg-brand-amber/10 text-brand-amber font-cinzel font-bold text-xl flex items-center justify-center mb-4">04</div>
-                    <h3 class="font-cinzel font-bold text-lg text-brand-dark mb-2">Fresh Roasted & Sealed</h3>
-                    <p class="text-brand-dark/70 text-xs font-light leading-relaxed">Roasting occurs on order with nitrogen-flushed, one-way valve packaging to ensure peak flavor preservation.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- TESTIMONIALS / REVIEWS SECTION -->
-    <section id="reviews" class="py-20 bg-brand-sand/40 border-t border-b border-brand-amber/10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-14">
-                <span class="text-brand-amber font-semibold text-xs uppercase tracking-widest">Client Testimonials</span>
-                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-brand-dark mt-1">Trusted by Roasters & Retailers</h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Review 1 -->
-                <div class="bg-white p-8 rounded-2xl border border-brand-amber/15 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-brand-gold text-xs gap-1 mb-4">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-brand-dark/80 text-sm font-light italic mb-6">
-                            "Kurishingal Arabica Gold has become the flagship espresso in our boutique coffee shop chain. The consistency in roast level and bean moisture content is superior to any other supplier."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                        <div class="w-10 h-10 rounded-full bg-brand-amber/20 text-brand-amber font-bold flex items-center justify-center">
-                            MA
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-brand-dark">Marcus Aurelius</h4>
-                            <p class="text-[11px] text-brand-dark/50">Owner, Highland Brew Roasters</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 2 -->
-                <div class="bg-white p-8 rounded-2xl border border-brand-amber/15 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-brand-gold text-xs gap-1 mb-4">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-brand-dark/80 text-sm font-light italic mb-6">
-                            "The Grade-A Green Cardamom from Kurishingal has an astonishing aroma. The pods are large, deep green, and full of oil. Perfect for our spice retail distribution."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                        <div class="w-10 h-10 rounded-full bg-brand-cardamom/20 text-brand-cardamom font-bold flex items-center justify-center">
-                            SR
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-brand-dark">Sarah Reynolds</h4>
-                            <p class="text-[11px] text-brand-dark/50">Purchasing Director, Artisan Spices Co.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Review 3 -->
-                <div class="bg-white p-8 rounded-2xl border border-brand-amber/15 shadow-sm flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-brand-gold text-xs gap-1 mb-4">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-brand-dark/80 text-sm font-light italic mb-6">
-                            "Prompt shipping, incredible wholesale pricing, and top-tier customer communication. Kurishingal Bean & Spices is our go-to single-origin partner."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-gray-100">
-                        <div class="w-10 h-10 rounded-full bg-brand-gold/20 text-brand-gold font-bold flex items-center justify-center">
-                            DK
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-sm text-brand-dark">David K.</h4>
-                            <p class="text-[11px] text-brand-dark/50">Specialty Coffee Buyer</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- INTERACTIVE ORDER / INQUIRY FORM SECTION -->
-    <section id="inquiry" class="py-20 bg-brand-cream relative">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white border border-brand-amber/20 rounded-3xl p-6 sm:p-10 shadow-xl">
-                
-                <div class="text-center max-w-xl mx-auto mb-8">
-                    <span class="text-brand-amber font-semibold text-xs uppercase tracking-widest">Business & Retail Queries</span>
-                    <h2 class="font-cinzel text-3xl font-bold text-brand-dark mt-1">Place an Inquiry or Sample Request</h2>
-                    <p class="text-brand-dark/60 text-sm mt-2">Fill out the form below to request a wholesale price sheet, coffee bean samples, or place a direct purchase order.</p>
-                </div>
-
-                <!-- Notification Alert (Hidden by default) -->
-                <div id="form-success-msg" class="hidden mb-6 p-4 rounded-xl bg-green-50 border border-green-200 text-green-800 text-sm flex items-center gap-3">
-                    <i class="fa-solid fa-circle-check text-green-600 text-lg"></i>
-                    <div>
-                        <strong class="font-semibold">Thank you for your inquiry!</strong>
-                        <p class="text-xs text-green-700">The Kurishingal sales team has received your message and will respond within 24 business hours.</p>
-                    </div>
-                </div>
-
-                <form id="orderForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs uppercase font-semibold text-brand-dark/70 mb-2">Full Name *</label>
-                            <input type="text" required placeholder="John Doe" class="w-full bg-brand-cream/50 border border-brand-amber/20 rounded-xl px-4 py-3 text-sm text-brand-dark focus:outline-none focus:border-brand-amber transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase font-semibold text-brand-dark/70 mb-2">Email Address *</label>
-                            <input type="email" required placeholder="john@example.com" class="w-full bg-brand-cream/50 border border-brand-amber/20 rounded-xl px-4 py-3 text-sm text-brand-dark focus:outline-none focus:border-brand-amber transition-colors">
-                        </div>
-                    </div>
-
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs uppercase font-semibold text-brand-dark/70 mb-2">Phone / WhatsApp *</label>
-                            <input type="tel" required placeholder="+1 (555) 000-0000" class="w-full bg-brand-cream/50 border border-brand-amber/20 rounded-xl px-4 py-3 text-sm text-brand-dark focus:outline-none focus:border-brand-amber transition-colors">
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase font-semibold text-brand-dark/70 mb-2">Inquiry Type</label>
-                            <select id="inquiry-type" class="w-full bg-brand-cream/50 border border-brand-amber/20 rounded-xl px-4 py-3 text-sm text-brand-dark focus:outline-none focus:border-brand-amber transition-colors">
-                                <option value="wholesale">Wholesale Bulk Order</option>
-                                <option value="sample">Request Coffee/Spice Samples</option>
-                                <option value="retail">Boutique Retail Pack Inquiry</option>
-                                <option value="custom">Custom Roast Profile Request</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="block text-xs uppercase font-semibold text-brand-dark/70 mb-2">Interested Products & Quantity</label>
-                        <input type="text" id="inquiry-product-details" placeholder="e.g. 50kg Arabica Gold + 10kg Green Cardamom" class="w-full bg-brand-cream/50 border border-brand-amber/20 rounded-xl px-4 py-3 text-sm text-brand-dark focus:outline-none focus:border-brand-amber transition-colors">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs uppercase font-semibold text-brand-dark/70 mb-2">Additional Message / Delivery Address</label>
-                        <textarea rows="4" placeholder="Tell us about your business, roasting requirements, or shipping destination..." class="w-full bg-brand-cream/50 border border-brand-amber/20 rounded-xl px-4 py-3 text-sm text-brand-dark focus:outline-none focus:border-brand-amber transition-colors"></textarea>
-                    </div>
-
-                    <div class="text-center pt-2">
-                        <button type="submit" class="w-full sm:w-auto px-10 py-4 rounded-full bg-brand-roast hover:bg-brand-dark text-brand-cream font-bold text-sm tracking-wider uppercase transition-all shadow-md">
-                            Submit Business Inquiry
-                        </button>
-                    </div>
-                </form>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER & CONTACT SECTION -->
-    <footer id="contact" class="bg-brand-dark text-brand-cream pt-16 pb-12 border-t border-brand-amber/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-brand-amber/15">
-                
-                <!-- Brand Info -->
-                <div class="md:col-span-4 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-brand-amber to-brand-gold flex items-center justify-center text-brand-dark font-bold font-cinzel text-lg">
-                            K
-                        </div>
-                        <span class="font-cinzel font-bold text-xl text-brand-cream tracking-wide">KURISHINGAL</span>
-                    </div>
-                    <p class="text-xs text-brand-sand/70 font-light leading-relaxed">
-                        Kurishingal Bean & Spices delivers single-origin, shade-grown Arabica, Robusta coffee beans, and whole Grade-A green cardamom directly from our highland plantations to world-class roasters and spice retailers.
+                    <p class="text-xs text-sand-300 leading-relaxed">
+                        Single-origin cardamom, dark wood-roasted coffee beans, and handpicked whole spices harvested directly from our estate in Kerala. Delivered fresh to your home.
                     </p>
-                    <div class="flex space-x-4 text-brand-gold text-lg pt-2">
-                        <a href="#" class="hover:text-brand-cream transition-colors"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="hover:text-brand-cream transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="hover:text-brand-cream transition-colors"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="hover:text-brand-cream transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    <div class="flex space-x-3 text-sand-300 pt-2">
+                        <a href="https://wa.me/918606004080" target="_blank" class="h-9 w-9 rounded-xl bg-sage-800 flex items-center justify-center hover:bg-terracotta-500 hover:text-white transition"><i class="fa-brands fa-whatsapp text-lg"></i></a>
+                        <a href="#" class="h-9 w-9 rounded-xl bg-sage-800 flex items-center justify-center hover:bg-terracotta-500 hover:text-white transition"><i class="fa-brands fa-instagram text-lg"></i></a>
+                        <a href="#" class="h-9 w-9 rounded-xl bg-sage-800 flex items-center justify-center hover:bg-terracotta-500 hover:text-white transition"><i class="fa-brands fa-facebook-f text-lg"></i></a>
                     </div>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="md:col-span-3 space-y-3">
-                    <h4 class="font-cinzel text-sm font-bold uppercase tracking-wider text-brand-gold">Quick Navigation</h4>
-                    <ul class="space-y-2 text-xs text-brand-sand/70">
-                        <li><a href="#about" class="hover:text-brand-gold transition-colors">Our Plantation Story</a></li>
-                        <li><a href="#products" class="hover:text-brand-gold transition-colors">Highland Coffee Beans</a></li>
-                        <li><a href="#products" class="hover:text-brand-gold transition-colors">Aromatic Green Cardamom</a></li>
-                        <li><a href="#calculator" class="hover:text-brand-gold transition-colors">Price & Order Calculator</a></li>
-                        <li><a href="#inquiry" class="hover:text-brand-gold transition-colors">Wholesale & Export Inquiry</a></li>
+                <div>
+                    <h4 class="text-white font-serif font-bold text-sm uppercase tracking-wider mb-4 border-b border-sage-800 pb-2">Quick Shop</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-sand-300">
+                        <li><a href="#" onclick="filterCategory('Cardamom')" class="hover:text-terracotta-500 transition">8mm Green Cardamom</a></li>
+                        <li><a href="#" onclick="filterCategory('Coffee')" class="hover:text-terracotta-500 transition">Single-Origin Arabica & Robusta</a></li>
+                        <li><a href="#" onclick="filterCategory('Spices')" class="hover:text-terracotta-500 transition">Tellicherry Black Pepper</a></li>
+                        <li><a href="#" onclick="filterCategory('Combos')" class="hover:text-terracotta-500 transition">Heritage Gift Sets</a></li>
                     </ul>
                 </div>
 
-                <!-- Contact Details -->
-                <div class="md:col-span-5 space-y-4">
-                    <h4 class="font-cinzel text-sm font-bold uppercase tracking-wider text-brand-gold">Estate & Office Location</h4>
-                    <ul class="space-y-3 text-xs text-brand-sand/80">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-brand-gold mt-1"></i>
-                            <span><strong>Kurishingal Estate & Processing Mill:</strong><br>Highland Estate Road, Wayanad / Idukki Spice Belt, Kerala, India</span>
+                <div>
+                    <h4 class="text-white font-serif font-bold text-sm uppercase tracking-wider mb-4 border-b border-sage-800 pb-2">Wholesale & Export</h4>
+                    <ul class="space-y-2.5 text-xs font-medium text-sand-300">
+                        <li><a href="https://wa.me/918606004080?text=Hello,%20I%20am%20interested%20in%20Bulk%20Wholesale%20Spices" target="_blank" class="hover:text-terracotta-500 transition flex items-center gap-1.5"><i class="fa-brands fa-whatsapp text-green-400"></i> Bulk Wholesale Orders</a></li>
+                        <li><a href="#" onclick="openDeliveryCheckerModal()" class="hover:text-terracotta-500 transition">Check Shipping Pincode</a></li>
+                        <li><a href="#" class="hover:text-terracotta-500 transition">Export & Commercial Supply</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-serif font-bold text-sm uppercase tracking-wider mb-4 border-b border-sage-800 pb-2">Contact & Estate</h4>
+                    <ul class="space-y-3 text-xs text-sand-300">
+                        <li class="flex items-start gap-2.5">
+                            <i class="fa-solid fa-location-dot text-terracotta-500 mt-1"></i>
+                            <span>Kurishingal Bean & Spices Estate, Ernakulam - High-Range Belt, Kerala - 682001</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-brand-gold"></i>
-                            <span>kurishingalbeans.com@gmail.com</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-brand-gold"></i>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-phone text-terracotta-500"></i>
                             <span>+91 86060 04080</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-clock text-brand-gold"></i>
-                            <span>Mon - Sat: 8:00 AM - 6:00 PM IST</span>
+                        <li class="flex items-center gap-2.5">
+                            <i class="fa-solid fa-envelope text-terracotta-500"></i>
+                            <span>orders@kurishingalspices.com</span>
                         </li>
                     </ul>
                 </div>
 
             </div>
 
-            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-sand/50">
-                <p>&copy; <span id="year"></span> Kurishingal Bean & Spices (Kurishingal Coffee & Beans). All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 sm:mt-0">
-                    <a href="#" class="hover:text-brand-gold transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-brand-gold transition-colors">Terms of Export</a>
-                    <a href="#" class="hover:text-brand-gold transition-colors">Quality Assurance</a>
+            <div class="border-t border-sage-800 mt-12 pt-6 text-center text-xs text-sand-300 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p>© 2026 Kurishingal Bean & Spices Reserve. All Rights Reserved.</p>
+                <div class="flex items-center space-x-4 text-lg text-sand-300">
+                    <i class="fa-brands fa-google-pay hover:text-white transition"></i>
+                    <i class="fa-solid fa-qrcode hover:text-white transition"></i>
+                    <i class="fa-brands fa-cc-visa hover:text-white transition"></i>
+                    <i class="fa-brands fa-cc-mastercard hover:text-white transition"></i>
                 </div>
             </div>
         </div>
     </footer>
 
-    <!-- PRODUCT QUICK VIEW MODAL -->
-    <div id="quickview-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-        <div class="bg-brand-cream border border-brand-amber/30 rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative animate-fade-in">
-            <button onclick="closeQuickView()" class="absolute top-4 right-4 text-brand-dark/60 hover:text-brand-dark bg-white/80 rounded-full w-8 h-8 flex items-center justify-center shadow">
-                <i class="fa-solid fa-xmark text-lg"></i>
-            </button>
-
-            <div class="grid sm:grid-cols-2">
-                <div class="h-64 sm:h-full bg-brand-dark">
-                    <img id="modal-img" src="" alt="Product Detail" class="w-full h-full object-cover">
-                </div>
-                <div class="p-6 space-y-4 flex flex-col justify-between">
-                    <div>
-                        <span id="modal-badge" class="text-[10px] uppercase font-bold tracking-wider px-2.5 py-1 rounded-full bg-brand-amber/20 text-brand-amber"></span>
-                        <h3 id="modal-title" class="font-cinzel font-bold text-2xl text-brand-dark mt-2"></h3>
-                        <p id="modal-subtitle" class="text-xs text-brand-amber font-semibold uppercase mb-3"></p>
-                        <p id="modal-desc" class="text-xs text-brand-dark/70 font-light leading-relaxed mb-4"></p>
-                        <div id="modal-price" class="font-cinzel font-bold text-xl text-brand-dark"></div>
+    <!-- CART SIDE DRAWER -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+        <div class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm pointer-events-auto" onclick="toggleCartDrawer()"></div>
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10 pointer-events-auto">
+            <div id="cartDrawerPanel" class="w-screen max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300">
+                
+                <div class="p-5 bg-sage-700 text-white flex justify-between items-center">
+                    <div class="flex items-center space-x-2">
+                        <i class="fa-solid fa-basket-shopping text-sand-200 text-lg"></i>
+                        <h3 class="font-serif font-bold text-lg">Your Shopping Basket</h3>
                     </div>
+                    <button onclick="toggleCartDrawer()" class="text-sand-200 hover:text-white p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
 
-                    <div class="pt-4 border-t border-brand-amber/15 flex flex-col gap-2">
-                        <button onclick="requestSampleFromModal()" class="w-full py-3 rounded-xl bg-brand-roast hover:bg-brand-dark text-white text-xs font-semibold uppercase tracking-wider transition-colors">
-                            Request Product Sample
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-5 space-y-4 custom-scrollbar">
+                    <!-- Dynamic Cart Items -->
+                </div>
+
+                <div id="cartFooter" class="p-5 border-t border-sand-200 bg-sand-50 space-y-4">
+                    <div class="space-y-2 text-xs text-slate-600 font-semibold">
+                        <div class="flex justify-between">
+                            <span>Subtotal</span>
+                            <span id="cartSubtotal" class="font-bold text-slate-900">₹0.00</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>All-India Courier</span>
+                            <span id="cartShipping" class="font-bold text-sage-600">FREE</span>
+                        </div>
+                        <div class="flex justify-between text-sm font-extrabold text-slate-900 pt-2 border-t border-sand-200">
+                            <span>Total Payable</span>
+                            <span id="cartTotal" class="text-terracotta-600 text-base">₹0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-2">
+                        <button onclick="proceedToCheckout()" class="bg-sage-600 hover:bg-sage-700 text-white font-bold py-3 rounded-2xl shadow-md transition flex items-center justify-center space-x-1.5 text-xs uppercase tracking-wider">
+                            <span>Checkout</span>
+                            <i class="fa-solid fa-arrow-right"></i>
                         </button>
-                        <button onclick="closeQuickView()" class="w-full py-2.5 rounded-xl border border-brand-dark/20 text-brand-dark text-xs font-semibold hover:bg-brand-sand/50 transition-colors">
-                            Close Window
+                        <button onclick="sendDirectWhatsAppOrder()" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-2xl shadow-md transition flex items-center justify-center space-x-1.5 text-xs uppercase tracking-wider">
+                            <i class="fa-brands fa-whatsapp text-base"></i>
+                            <span>WhatsApp</span>
                         </button>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <!-- JAVASCRIPT LOGIC -->
+    <!-- PRODUCT DETAIL MODAL -->
+    <div id="productModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-4xl w-full overflow-hidden shadow-2xl relative transform transition-all my-8 border border-sand-200">
+            <button onclick="closeModal('productModal')" class="absolute top-4 right-4 z-10 bg-sand-100 hover:bg-sand-200 text-slate-700 rounded-full p-2 shadow-sm transition">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div id="productModalContent" class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Content Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl my-6 flex flex-col max-h-[90vh] border border-sand-200">
+            
+            <div class="bg-sage-700 text-white p-5 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <i class="fa-solid fa-shield-check text-sand-200 text-2xl"></i>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg">Express Checkout</h3>
+                        <p class="text-[11px] text-sand-200">Direct Delivery from Kerala Estate</p>
+                    </div>
+                </div>
+                <button onclick="closeModal('checkoutModal')" class="text-sand-200 hover:text-white">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+
+            <div class="bg-sand-100 border-b border-sand-200 p-3 flex justify-around text-xs font-bold text-slate-700">
+                <div id="step1Indicator" class="text-sage-700 border-b-2 border-sage-600 pb-1">1. Delivery Address</div>
+                <div id="step2Indicator" class="text-slate-400 pb-1">2. Payment Method</div>
+                <div id="step3Indicator" class="text-slate-400 pb-1">3. Order Confirmation</div>
+            </div>
+
+            <div class="p-6 overflow-y-auto custom-scrollbar space-y-6 flex-1">
+                
+                <!-- STEP 1: Address Input -->
+                <div id="checkoutStep1" class="space-y-4">
+                    <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wider border-b border-sand-200 pb-2">Shipping Address</h4>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">Full Name *</label>
+                            <input type="text" id="custName" placeholder="e.g. Kurian Thomas" class="w-full border border-sand-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-sage-500">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">WhatsApp / Contact Phone *</label>
+                            <input type="tel" id="custPhone" placeholder="10-digit Mobile Number" class="w-full border border-sand-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-sage-500">
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-semibold text-slate-700 mb-1">Pincode *</label>
+                            <div class="flex gap-2">
+                                <input type="text" id="custPincode" placeholder="e.g. 682001" class="w-full border border-sand-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-sage-500">
+                                <button type="button" onclick="verifyPincodeInCheckout()" class="bg-sage-600 hover:bg-sage-700 text-white font-bold px-5 rounded-xl text-xs whitespace-nowrap">Verify</button>
+                            </div>
+                            <p id="pincodeCheckResult" class="text-[11px] mt-1 font-semibold"></p>
+                        </div>
+                        <div class="sm:col-span-2">
+                            <label class="block font-semibold text-slate-700 mb-1">House Name / Street Address *</label>
+                            <textarea id="custAddress" rows="2" placeholder="Complete address details..." class="w-full border border-sand-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-sage-500"></textarea>
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">City / Town *</label>
+                            <input type="text" id="custCity" placeholder="e.g. Ernakulam / Kochi" class="w-full border border-sand-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-sage-500">
+                        </div>
+                        <div>
+                            <label class="block font-semibold text-slate-700 mb-1">State *</label>
+                            <select id="custState" class="w-full border border-sand-200 rounded-xl p-3 outline-none focus:ring-2 focus:ring-sage-500 font-semibold bg-white">
+                                <option value="Kerala">Kerala</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Other State">Other Indian State</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="goToCheckoutStep(2)" class="w-full bg-sage-600 hover:bg-sage-700 text-white font-bold py-3.5 rounded-2xl shadow-md transition mt-4 text-xs uppercase tracking-wider">
+                        Proceed to Payment <i class="fa-solid fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- STEP 2: Payment Selection -->
+                <div id="checkoutStep2" class="hidden space-y-4">
+                    <h4 class="font-bold text-slate-800 text-sm uppercase tracking-wider border-b border-sand-200 pb-2">Select Payment Method</h4>
+
+                    <div class="space-y-3 text-xs">
+                        <!-- UPI -->
+                        <label class="flex items-start p-4 border rounded-2xl cursor-pointer hover:bg-sand-50 transition border-sand-200">
+                            <input type="radio" name="paymentOption" value="upi" checked class="mt-1 text-sage-600 focus:ring-sage-500">
+                            <div class="ml-3">
+                                <div class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-qrcode text-sage-600"></i> Direct UPI / GPay / PhonePe
+                                </div>
+                                <p class="text-slate-500 mt-0.5">Pay quickly via UPI apps with no added charges.</p>
+                            </div>
+                        </label>
+
+                        <!-- COD -->
+                        <label class="flex items-start p-4 border rounded-2xl cursor-pointer hover:bg-sand-50 transition border-sand-200">
+                            <input type="radio" name="paymentOption" value="cod" class="mt-1 text-sage-600 focus:ring-sage-500">
+                            <div class="ml-3">
+                                <div class="font-bold text-slate-800 text-sm flex items-center gap-2">
+                                    <i class="fa-solid fa-hand-holding-dollar text-terracotta-500"></i> Cash on Delivery (COD)
+                                </div>
+                                <p class="text-slate-500 mt-0.5">Pay cash when your fresh spice box reaches home.</p>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="bg-sand-50 p-4 rounded-2xl border border-sand-200 text-xs space-y-1.5">
+                        <div class="flex justify-between font-bold">
+                            <span>Amount Payable:</span>
+                            <span id="checkoutFinalAmount" class="text-terracotta-600 text-base font-extrabold">₹0.00</span>
+                        </div>
+                        <p class="text-[11px] text-slate-500">Includes taxes, packaging, and express shipping.</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <button onclick="goToCheckoutStep(1)" class="bg-sand-200 hover:bg-sand-300 text-slate-700 font-bold py-3.5 rounded-2xl transition text-xs">
+                            Back
+                        </button>
+                        <button onclick="confirmOrder()" class="bg-sage-600 hover:bg-sage-700 text-white font-bold py-3.5 rounded-2xl shadow-md transition text-xs uppercase tracking-wider">
+                            <i class="fa-solid fa-lock mr-1"></i> Complete Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Success Screen -->
+                <div id="checkoutStep3" class="hidden text-center py-6 space-y-5">
+                    <div class="w-20 h-20 bg-sage-100 text-sage-600 rounded-full flex items-center justify-center mx-auto text-4xl shadow-inner">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-2xl text-slate-900">Order Confirmed!</h3>
+                        <p class="text-xs text-slate-500 mt-1">Thank you for ordering from Kurishingal Bean & Spices.</p>
+                    </div>
+
+                    <div class="bg-sand-50 border border-sand-200 rounded-2xl p-5 max-w-md mx-auto text-left text-xs space-y-2 font-medium">
+                        <div class="flex justify-between border-b border-sand-200 pb-2">
+                            <span class="text-slate-500">Order Reference:</span>
+                            <span id="confirmedOrderId" class="font-mono font-bold text-sage-800">#KBS-982341</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-500">Estimated Delivery:</span>
+                            <span class="font-bold text-sage-700">3 to 4 Business Days</span>
+                        </div>
+                    </div>
+
+                    <button onclick="closeModal('checkoutModal'); resetCart();" class="bg-sage-700 hover:bg-sage-800 text-white font-bold px-8 py-3.5 rounded-2xl transition text-xs uppercase tracking-wider">
+                        Continue Shopping
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- PINCODE MODAL -->
+    <div id="deliveryModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-md w-full p-6 shadow-2xl relative border border-sand-200">
+            <button onclick="closeModal('deliveryModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <h3 class="font-serif font-bold text-lg text-slate-800 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-truck-fast text-sage-600"></i> Pincode Delivery Checker
+            </h3>
+            <p class="text-xs text-slate-500 mb-4">Check express shipping timeline & Cash on Delivery availability.</p>
+            
+            <div class="flex gap-2 mb-3">
+                <input type="text" id="pincodeInput" placeholder="Enter 6-digit Pincode (e.g. 682001)" class="w-full border rounded-xl p-3 text-xs outline-none focus:ring-2 focus:ring-sage-500 font-semibold">
+                <button onclick="checkPincode()" class="bg-sage-600 hover:bg-sage-700 text-white font-bold px-5 rounded-xl text-xs uppercase">Check</button>
+            </div>
+            
+            <div id="pincodeStatus" class="hidden text-xs p-3.5 rounded-xl font-medium"></div>
+        </div>
+    </div>
+
+    <!-- USER MODAL -->
+    <div id="userModal" class="fixed inset-0 z-50 hidden bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-sm w-full p-6 shadow-2xl relative text-center space-y-4 border border-sand-200">
+            <button onclick="closeModal('userModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="w-16 h-16 bg-sage-50 text-sage-600 rounded-full flex items-center justify-center mx-auto text-2xl font-bold">
+                <i class="fa-regular fa-user"></i>
+            </div>
+            <h3 class="font-serif font-bold text-slate-800 text-lg">Kurishingal Account</h3>
+            <p class="text-xs text-slate-500">Sign in to track orders or manage your saved addresses.</p>
+            
+            <div class="space-y-2 pt-2">
+                <button onclick="alert('Account feature active in live store mode.')" class="w-full bg-sage-600 hover:bg-sage-700 text-white font-bold py-3 rounded-xl text-xs uppercase tracking-wider">
+                    Sign In / Create Account
+                </button>
+                <button onclick="closeModal('userModal')" class="w-full border border-sand-200 hover:bg-sand-50 text-slate-700 font-semibold py-3 rounded-xl text-xs">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-sage-900 text-sand-100 px-6 py-4 rounded-2xl shadow-2xl flex items-center space-x-3 transform translate-y-24 opacity-0 transition-all duration-300">
+        <i class="fa-solid fa-circle-check text-sage-200 text-xl"></i>
+        <span id="toastMsg" class="text-xs font-semibold tracking-wide">Item added to your basket!</span>
+    </div>
+
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
     <script>
-        // Set dynamic year
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Mobile Navigation Toggle
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Product Data for Modal
-        const productDetails = {
-            arabica: {
-                title: "Kurishingal Arabica Gold",
-                subtitle: "Medium Roast • Whole Bean",
-                badge: "Highland Arabica",
-                desc: "Cultivated at 3,800 feet altitude in rich volcanic soil. Features sweet caramel aroma, velvety chocolate body, and balanced brightness. Ideal for pour-over and drip brewing.",
-                price: "$18.50 / 500g",
-                img: "https://images.unsplash.com/photo-1587734195503-904fca47e0e9?auto=format&fit=crop&w=700&q=80"
+        const products = [
+            {
+                id: 1,
+                name: "Handpicked 8mm Extra Bold Green Cardamom",
+                malayalamName: "Single-Origin Jumbo Pods",
+                category: "Cardamom",
+                price: 890,
+                oldPrice: 1100,
+                rating: 4.9,
+                reviewsCount: 420,
+                image: "https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&w=800&q=80",
+                badge: "Organic Grade",
+                origin: "High Ranges, Idukki Estate",
+                description: "Handpicked 8mm jumbo green pods rich in natural essential oils. 100% natural, sun-cured on estate grounds without chemical dyes."
             },
-            espresso: {
-                title: "Estate Reserve Espresso",
-                subtitle: "Dark Roast • Whole / Ground",
-                badge: "Rich & Smoky",
-                desc: "Slow roasted in small batches for dense crema and deep flavor notes of dark cocoa, roasted hazelnuts, and warm spice. Outstanding for espresso machines and Moka pots.",
-                price: "$16.00 / 500g",
-                img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=700&q=80"
+            {
+                id: 2,
+                name: "Wayanad Dark Roast Single-Origin Coffee Beans",
+                malayalamName: "Artisanal Wood-Roasted Robusta",
+                category: "Coffee",
+                price: 480,
+                oldPrice: 600,
+                rating: 4.8,
+                reviewsCount: 310,
+                image: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?auto=format&fit=crop&w=800&q=80",
+                badge: "Estate Roast",
+                origin: "Wayanad Coffee Hills, Kerala",
+                description: "Full-bodied Robusta coffee beans carefully roasted to perfection. Delivers thick crema, rich dark chocolate notes, and smooth finish."
             },
-            cardamom: {
-                title: "Kurishingal Royal Cardamom",
-                subtitle: "Grade A Green • 8mm+ Whole Pods",
-                badge: "Premium Spice",
-                desc: "Handpicked extra-bold green cardamom pods containing high concentrations of essential natural oils. Provides intense sweet spice aroma for culinary & beverage crafting.",
-                price: "$24.00 / 250g",
-                img: "https://images.unsplash.com/photo-1599785209707-a456fc1337cc?auto=format&fit=crop&w=700&q=80"
+            {
+                id: 3,
+                name: "Tellicherry Bold Black Pepper",
+                malayalamName: "Sun-Dried Heavy Grade Pepper",
+                category: "Spices",
+                price: 420,
+                oldPrice: 520,
+                rating: 4.9,
+                reviewsCount: 280,
+                image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=800&q=80",
+                badge: "High Piperine",
+                origin: "Central Travancore Belt",
+                description: "Sun-cured heavy density black pepper. High natural piperine content giving an authentic bold aroma to your dishes."
             },
-            robusta: {
-                title: "Micro-Lot Raw Robusta",
-                subtitle: "Unroasted • Green Beans",
-                badge: "Wholesale Raw",
-                desc: "High-density green coffee beans with strong body, low acidity, and rich caffeine content. Preferred by roasters for custom espresso blending.",
-                price: "$11.50 / kg",
-                img: "https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?auto=format&fit=crop&w=700&q=80"
+            {
+                id: 4,
+                name: "South Indian Arabica Filter Coffee Powder",
+                malayalamName: "Traditional Micro-Lot Blend",
+                category: "Coffee",
+                price: 520,
+                oldPrice: 650,
+                rating: 4.9,
+                reviewsCount: 195,
+                image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80",
+                badge: "Traditional Blend",
+                origin: "Nelliampathy Hills, Kerala",
+                description: "85% Pure Arabica blended with 15% Chicory for the classic South Indian filter coffee experience. Rich aroma and deep flavor."
             },
-            cardamompowder: {
-                title: "Artisan Cardamom Seed Powder",
-                subtitle: "Freshly De-hulled & Ground",
-                badge: "Pure Spice Extract",
-                desc: "Decorticated cardamom seeds cold-ground to preserve volatile flavor compounds. 100% pure with no added fillers or preservatives.",
-                price: "$19.00 / 200g",
-                img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=700&q=80"
+            {
+                id: 5,
+                name: "High-Oil Whole Estate Cloves",
+                malayalamName: "High-Altitude Sun-Cured Cloves",
+                category: "Spices",
+                price: 360,
+                oldPrice: 450,
+                rating: 4.8,
+                reviewsCount: 140,
+                image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
+                badge: "Organic",
+                origin: "High Range Spices Estate",
+                description: "Whole clove buds rich in natural eugenol essential oil. Exceptional aroma for authentic teas, biryanis, and herbal brews."
             },
-            giftbox: {
-                title: "Kurishingal Heritage Gift Box",
-                subtitle: "Sampler • Coffee + Cardamom",
-                badge: "Luxury Pack",
-                desc: "An exquisite curated gift set including Arabica Gold, Espresso Reserve, and Grade-A Green Cardamom pods packaged in a signature wooden box.",
-                price: "$45.00 Box Price",
-                img: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=700&q=80"
+            {
+                id: 6,
+                name: "True Ceylon Cinnamon & Nutmeg Gift Set",
+                malayalamName: "Artisanal Spice Reserve Pack",
+                category: "Combos",
+                price: 650,
+                oldPrice: 820,
+                rating: 4.9,
+                reviewsCount: 165,
+                image: "https://images.unsplash.com/photo-1509358271058-acd22cc93898?auto=format&fit=crop&w=800&q=80",
+                badge: "Heritage Pack",
+                origin: "Kurishingal Spice Gardens",
+                description: "Thin-quill Ceylon Cinnamon bark paired with fresh whole shell Nutmeg for home baking and festive recipes."
+            },
+            {
+                id: 7,
+                name: "7mm Premium Medium Green Cardamom",
+                malayalamName: "Daily Kitchen Fresh Pods",
+                category: "Cardamom",
+                price: 720,
+                oldPrice: 880,
+                rating: 4.7,
+                reviewsCount: 110,
+                image: "https://images.unsplash.com/photo-1608797178974-15b35a64ede9?auto=format&fit=crop&w=800&q=80",
+                badge: "Daily Pantry",
+                origin: "Idukki Estate Harvest",
+                description: "7mm pods perfect for everyday culinary use, tea brewing, and desserts. Filled with fragrant dark seeds."
+            },
+            {
+                id: 8,
+                name: "Kurishingal Royal Spice Box (Grand Heritage Pack)",
+                malayalamName: "Luxury Gift Chest",
+                category: "Combos",
+                price: 1490,
+                oldPrice: 1850,
+                rating: 5.0,
+                reviewsCount: 520,
+                image: "https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=800&q=80",
+                badge: "Luxury Gift",
+                origin: "Signature Estate Collection",
+                description: "Includes 100g 8mm Cardamom, 100g Black Pepper, 100g Cloves, 250g Dark Roast Coffee & Star Anise inside a signature gift box."
             }
+        ];
+
+        let cart = [];
+        let currentProducts = [...products];
+        let activeCategory = "All";
+
+        window.onload = function() {
+            renderProducts(currentProducts);
+            updateCartUI();
         };
 
-        // Product Filter Logic
-        function filterProducts(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            const cards = document.querySelectorAll('.product-card');
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            const countLabel = document.getElementById('productCount');
+            countLabel.innerText = `${items.length} Items`;
 
-            buttons.forEach(btn => {
-                if (btn.dataset.filter === category) {
-                    btn.classList.add('bg-brand-dark', 'text-brand-cream');
-                    btn.classList.remove('bg-white', 'text-brand-dark');
-                } else {
-                    btn.classList.remove('bg-brand-dark', 'text-brand-cream');
-                    btn.classList.add('bg-white', 'text-brand-dark');
-                }
-            });
-
-            cards.forEach(card => {
-                if (category === 'all' || card.classList.contains(category)) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Quick View Modal Handlers
-        let activeProductKey = '';
-
-        function openQuickView(key) {
-            const item = productDetails[key];
-            if (!item) return;
-
-            activeProductKey = key;
-            document.getElementById('modal-img').src = item.img;
-            document.getElementById('modal-title').textContent = item.title;
-            document.getElementById('modal-subtitle').textContent = item.subtitle;
-            document.getElementById('modal-badge').textContent = item.badge;
-            document.getElementById('modal-desc').textContent = item.desc;
-            document.getElementById('modal-price').textContent = item.price;
-
-            document.getElementById('quickview-modal').classList.remove('hidden');
-        }
-
-        function closeQuickView() {
-            document.getElementById('quickview-modal').classList.add('hidden');
-        }
-
-        function requestSampleFromModal() {
-            closeQuickView();
-            const item = productDetails[activeProductKey];
-            if (item) {
-                document.getElementById('inquiry-product-details').value = `Sample Request for: ${item.title}`;
-                document.getElementById('inquiry-type').value = 'sample';
-                document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
+            if (items.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16 bg-white rounded-3xl border border-dashed border-sand-200">
+                        <i class="fa-solid fa-seedling text-4xl text-sand-300 mb-2"></i>
+                        <h4 class="font-bold text-slate-700 text-sm">No items matching your criteria</h4>
+                        <button onclick="resetFilters()" class="mt-4 text-xs bg-sage-600 text-white px-5 py-2.5 rounded-xl font-bold uppercase">Reset All Filters</button>
+                    </div>
+                `;
+                return;
             }
+
+            grid.innerHTML = items.map(product => `
+                <div class="nature-card rounded-3xl overflow-hidden border border-sand-200 flex flex-col justify-between">
+                    
+                    <div class="relative bg-sand-100 h-52 sm:h-56 overflow-hidden cursor-pointer" onclick="openProductModal(${product.id})">
+                        <img src="${product.image}" alt="${product.name}" 
+                             onerror="this.src='https://placehold.co/600x400/4a5d4e/ffffff?text=Kurishingal+Spices'"
+                             class="w-full h-full object-cover hover:scale-105 transition duration-700">
+                        <span class="absolute top-3 left-3 bg-sage-600 text-white font-bold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full shadow-sm">
+                            ${product.badge}
+                        </span>
+                        <div class="absolute bottom-3 right-3 bg-white/90 backdrop-blur-md text-slate-800 text-[11px] px-2.5 py-1 rounded-xl flex items-center gap-1 font-bold shadow-sm">
+                            <i class="fa-solid fa-star text-amber-500 text-xs"></i>
+                            <span>${product.rating}</span>
+                        </div>
+                    </div>
+
+                    <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <span class="text-[10px] font-bold uppercase tracking-widest text-sage-700 bg-sage-50 px-2.5 py-1 rounded-md border border-sage-100">
+                                ${product.category}
+                            </span>
+                            <h3 onclick="openProductModal(${product.id})" class="font-bold text-slate-800 text-sm sm:text-base mt-2 line-clamp-2 cursor-pointer hover:text-sage-700 transition leading-snug">
+                                ${product.name}
+                            </h3>
+                            <p class="text-[11px] text-slate-400 font-medium mt-0.5">${product.malayalamName}</p>
+                        </div>
+
+                        <div>
+                            <div class="flex items-baseline space-x-2">
+                                <span class="text-xl font-bold text-slate-900">₹${product.price}</span>
+                                <span class="text-xs text-slate-400 line-through">₹${product.oldPrice}</span>
+                                <span class="text-[11px] font-bold text-terracotta-500">
+                                    ${Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% OFF
+                                </span>
+                            </div>
+                            <p class="text-[10px] text-slate-400 font-medium">Standard Pack: 250g Sealed</p>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-sand-100">
+                            <button onclick="addToCart(${product.id})" class="w-full bg-sand-100 hover:bg-sand-200 text-slate-800 font-bold py-2.5 rounded-xl text-xs transition flex items-center justify-center gap-1.5">
+                                <i class="fa-solid fa-basket-shopping"></i> Add Bag
+                            </button>
+                            <button onclick="buyNow(${product.id})" class="w-full bg-sage-600 hover:bg-sage-700 text-white font-bold py-2.5 rounded-xl text-xs transition shadow-sm uppercase tracking-wider">
+                                Buy Now
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            `).join('');
         }
 
-        // Estimator Calculator Logic
-        function calculateEstimate() {
-            const select = document.getElementById('calc-product');
-            const qtyInput = document.getElementById('calc-qty');
-            const pricePerKg = parseFloat(select.value);
-            const qty = parseInt(qtyInput.value);
+        function filterCategory(category) {
+            activeCategory = category;
+            document.getElementById('categoryLabel').innerText = `(${category === 'All' ? 'All Items' : category})`;
+            const radios = document.getElementsByName('catFilter');
+            radios.forEach(r => { if(r.value === category) r.checked = true; });
+            applyAllFilters();
+        }
 
-            document.getElementById('calc-qty-label').textContent = `${qty} kg`;
+        function applyPriceFilter(val) {
+            document.getElementById('priceValue').innerText = val;
+            applyAllFilters();
+        }
 
-            let discount = 0;
-            if (qty >= 50) {
-                discount = 0.15; // 15% off for 50kg+
-                document.getElementById('discount-note').textContent = "15% bulk discount applied!";
-            } else if (qty >= 10) {
-                discount = 0.10; // 10% off for 10kg+
-                document.getElementById('discount-note').textContent = "10% tier discount applied!";
+        function applyAllFilters() {
+            const maxPrice = parseInt(document.getElementById('priceRange').value);
+            const query = document.getElementById('searchInput').value.toLowerCase();
+
+            currentProducts = products.filter(p => {
+                const matchesCat = activeCategory === 'All' || p.category === activeCategory;
+                const matchesPrice = p.price <= maxPrice;
+                const matchesSearch = p.name.toLowerCase().includes(query) || p.malayalamName.toLowerCase().includes(query);
+                return matchesCat && matchesPrice && matchesSearch;
+            });
+
+            sortProducts();
+        }
+
+        function sortProducts() {
+            const sortVal = document.getElementById('sortSelect').value;
+            if (sortVal === 'lowToHigh') currentProducts.sort((a, b) => a.price - b.price);
+            else if (sortVal === 'highToLow') currentProducts.sort((a, b) => b.price - a.price);
+            else if (sortVal === 'rating') currentProducts.sort((a, b) => b.rating - a.rating);
+            renderProducts(currentProducts);
+        }
+
+        function resetFilters() {
+            document.getElementById('priceRange').value = 2000;
+            document.getElementById('priceValue').innerText = 2000;
+            document.getElementById('searchInput').value = '';
+            document.getElementById('sortSelect').value = 'featured';
+            filterCategory('All');
+        }
+
+        function handleSearch() { applyAllFilters(); }
+        function handleSearchMobile() {
+            document.getElementById('searchInput').value = document.getElementById('searchInputMobile').value;
+            applyAllFilters();
+        }
+        function toggleMobileSearch() { document.getElementById('mobileSearchBar').classList.toggle('hidden'); }
+        function scrollToProducts() { document.getElementById('productExplorer').scrollIntoView({ behavior: 'smooth' }); }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingIndex = cart.findIndex(item => item.id === productId);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
             } else {
-                discount = 0;
-                document.getElementById('discount-note').textContent = "Add 10kg+ for tier discounts";
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartUI();
+            showToast(`Added "${product.name.substring(0, 22)}..."`);
+        }
+
+        function updateCartQty(productId, change) {
+            const index = cart.findIndex(item => item.id === productId);
+            if (index > -1) {
+                cart[index].qty += change;
+                if (cart[index].qty <= 0) cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function updateCartUI() {
+            const container = document.getElementById('cartItemsContainer');
+            const cartCountBadge = document.getElementById('cartCountBadge');
+            const subtotalEl = document.getElementById('cartSubtotal');
+            const totalEl = document.getElementById('cartTotal');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+            cartCountBadge.innerText = totalItems;
+
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-20 text-slate-400 space-y-3">
+                        <i class="fa-solid fa-basket-shopping text-5xl text-sand-300"></i>
+                        <p class="font-bold text-slate-600 text-sm">Your basket is empty</p>
+                        <p class="text-xs">Add fresh cardamom or coffee to proceed.</p>
+                    </div>
+                `;
+                subtotalEl.innerText = "₹0.00";
+                totalEl.innerText = "₹0.00";
+                return;
             }
 
-            const rawTotal = pricePerKg * qty;
-            const discountAmt = rawTotal * discount;
-            const finalTotal = rawTotal - discountAmt;
+            let subtotal = 0;
+            container.innerHTML = cart.map(item => {
+                const itemTotal = item.price * item.qty;
+                subtotal += itemTotal;
 
-            document.getElementById('calc-total').textContent = `$${finalTotal.toFixed(2)}`;
-            document.getElementById('calc-breakdown').textContent = discount > 0 
-                ? `Includes ${discount * 100}% bulk discount (Saved $${discountAmt.toFixed(2)})`
-                : `Base rate at $${pricePerKg.toFixed(2)} / kg`;
+                return `
+                    <div class="flex items-center space-x-3 p-3.5 bg-sand-50 rounded-2xl border border-sand-200">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-14 object-cover rounded-xl flex-shrink-0">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-xs text-slate-800 truncate">${item.name}</h4>
+                            <p class="text-[10px] text-slate-500 font-semibold">₹${item.price} x ${item.qty}</p>
+                            <div class="flex items-center space-x-2 mt-1">
+                                <button onclick="updateCartQty(${item.id}, -1)" class="w-5 h-5 bg-white border border-sand-200 rounded-md text-xs flex items-center justify-center font-bold text-slate-700">-</button>
+                                <span class="text-xs font-bold text-slate-800">${item.qty}</span>
+                                <button onclick="updateCartQty(${item.id}, 1)" class="w-5 h-5 bg-white border border-sand-200 rounded-md text-xs flex items-center justify-center font-bold text-slate-700">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span class="font-bold text-xs text-slate-900">₹${itemTotal}</span>
+                            <button onclick="updateCartQty(${item.id}, -${item.qty})" class="block text-red-500 hover:text-red-700 text-[10px] mt-1 font-bold">Remove</button>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            subtotalEl.innerText = `₹${subtotal}.00`;
+            totalEl.innerText = `₹${subtotal}.00`;
+            document.getElementById('checkoutFinalAmount').innerText = `₹${subtotal}.00`;
         }
 
-        function prefillInquiryFromCalc() {
-            const select = document.getElementById('calc-product');
-            const selectedText = select.options[select.selectedIndex].text;
-            const qty = document.getElementById('calc-qty').value;
-
-            document.getElementById('inquiry-product-details').value = `${qty}kg of ${selectedText}`;
-            document.getElementById('inquiry-type').value = 'wholesale';
-            document.getElementById('inquiry').scrollIntoView({ behavior: 'smooth' });
+        function toggleCartDrawer() {
+            const drawer = document.getElementById('cartDrawer');
+            const panel = document.getElementById('cartDrawerPanel');
+            if (drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                panel.classList.add('translate-x-full');
+            }
         }
 
-        // Inquiry Form Handler
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            const successMsg = document.getElementById('form-success-msg');
-            successMsg.classList.remove('hidden');
-            document.getElementById('orderForm').reset();
+        function sendDirectWhatsAppOrder() {
+            if (cart.length === 0) {
+                alert("Your basket is empty! Please add products before placing an order.");
+                return;
+            }
+            let message = "Hello Kurishingal Bean & Spices, I would like to place an order:\n\n";
+            let grandTotal = 0;
+            cart.forEach((item, i) => {
+                const total = item.price * item.qty;
+                grandTotal += total;
+                message += `${i+1}. ${item.name} (${item.qty} pack) - ₹${total}\n`;
+            });
+            message += `\n*Total Amount:* ₹${grandTotal}\n\nPlease confirm availability and dispatch timeline.`;
             
-            setTimeout(() => {
-                successMsg.classList.add('hidden');
-            }, 6000);
+            const encoded = encodeURIComponent(message);
+            window.open(`https://wa.me/918606004080?text=${encoded}`, '_blank');
         }
 
-        // Initialize Calculator
-        calculateEstimate();
+        function buyNow(productId) {
+            addToCart(productId);
+            proceedToCheckout();
+        }
+
+        function proceedToCheckout() {
+            if (cart.length === 0) {
+                alert("Cart is empty! Add products first.");
+                return;
+            }
+            if (!document.getElementById('cartDrawer').classList.contains('opacity-0')) {
+                toggleCartDrawer();
+            }
+            openModal('checkoutModal');
+            goToCheckoutStep(1);
+        }
+
+        function goToCheckoutStep(step) {
+            document.getElementById('checkoutStep1').classList.add('hidden');
+            document.getElementById('checkoutStep2').classList.add('hidden');
+            document.getElementById('checkoutStep3').classList.add('hidden');
+
+            document.getElementById('step1Indicator').className = "text-slate-400 pb-1";
+            document.getElementById('step2Indicator').className = "text-slate-400 pb-1";
+            document.getElementById('step3Indicator').className = "text-slate-400 pb-1";
+
+            if (step === 1) {
+                document.getElementById('checkoutStep1').classList.remove('hidden');
+                document.getElementById('step1Indicator').className = "text-sage-700 border-b-2 border-sage-600 pb-1 font-bold";
+            } else if (step === 2) {
+                const name = document.getElementById('custName').value.trim();
+                const phone = document.getElementById('custPhone').value.trim();
+                const address = document.getElementById('custAddress').value.trim();
+
+                if (!name || !phone || !address) {
+                    alert("Please fill in your Name, WhatsApp Phone Number, and Shipping Address.");
+                    document.getElementById('checkoutStep1').classList.remove('hidden');
+                    document.getElementById('step1Indicator').className = "text-sage-700 border-b-2 border-sage-600 pb-1 font-bold";
+                    return;
+                }
+                document.getElementById('checkoutStep2').classList.remove('hidden');
+                document.getElementById('step2Indicator').className = "text-sage-700 border-b-2 border-sage-600 pb-1 font-bold";
+            } else if (step === 3) {
+                document.getElementById('checkoutStep3').classList.remove('hidden');
+                document.getElementById('step3Indicator').className = "text-sage-700 font-bold pb-1";
+            }
+        }
+
+        function verifyPincodeInCheckout() {
+            const pincode = document.getElementById('custPincode').value.trim();
+            const res = document.getElementById('pincodeCheckResult');
+            if (pincode.length === 6 && !isNaN(pincode)) {
+                res.className = "text-[11px] mt-1 font-bold text-sage-700";
+                res.innerText = "✓ Serviceable Pincode! Express delivery in 3-4 Days (COD Available)";
+            } else {
+                res.className = "text-[11px] mt-1 font-bold text-red-600";
+                res.innerText = "✕ Please enter a valid 6-digit Pincode.";
+            }
+        }
+
+        function confirmOrder() {
+            const randomOrderId = '#KBS-' + Math.floor(100000 + Math.random() * 900000);
+            document.getElementById('confirmedOrderId').innerText = randomOrderId;
+            goToCheckoutStep(3);
+        }
+
+        function resetCart() {
+            cart = [];
+            updateCartUI();
+        }
+
+        function openModal(modalId) { document.getElementById(modalId).classList.remove('hidden'); }
+        function closeModal(modalId) { document.getElementById(modalId).classList.add('hidden'); }
+
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            const content = document.getElementById('productModalContent');
+
+            content.innerHTML = `
+                <div class="bg-sand-100 p-6 flex items-center justify-center">
+                    <img src="${product.image}" alt="${product.name}" class="max-h-80 object-cover rounded-2xl shadow-md">
+                </div>
+                <div class="p-6 sm:p-8 space-y-4 flex flex-col justify-between">
+                    <div class="space-y-3">
+                        <span class="text-xs font-bold text-sage-700 uppercase tracking-widest bg-sage-50 px-2.5 py-1 rounded border border-sage-100">${product.category}</span>
+                        <h2 class="font-serif font-bold text-xl text-slate-800 leading-snug">${product.name}</h2>
+                        <p class="text-xs text-slate-400 font-medium">${product.malayalamName}</p>
+                        
+                        <div class="flex items-center space-x-2">
+                            <span class="bg-sage-600 text-white text-xs font-bold px-2.5 py-0.5 rounded flex items-center gap-1">
+                                <i class="fa-solid fa-star text-[10px]"></i> ${product.rating}
+                            </span>
+                            <span class="text-xs text-slate-500 font-medium">(${product.reviewsCount} Reviews)</span>
+                        </div>
+
+                        <div class="flex items-baseline space-x-3 pt-1">
+                            <span class="text-3xl font-bold text-slate-900">₹${product.price}</span>
+                            <span class="text-sm text-slate-400 line-through">₹${product.oldPrice}</span>
+                            <span class="text-xs font-bold text-terracotta-500">Save ₹${product.oldPrice - product.price}</span>
+                        </div>
+
+                        <p class="text-xs text-slate-600 leading-relaxed">${product.description}</p>
+                        
+                        <div class="text-xs bg-sand-50 p-3.5 rounded-2xl border border-sand-200 space-y-1">
+                            <p class="font-bold text-slate-800"><i class="fa-solid fa-location-dot text-sage-600 mr-1.5"></i> Origin: ${product.origin}</p>
+                            <p class="text-slate-500">Fresh harvest batch. Direct estate delivery guaranteed.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-3 pt-4 border-t border-sand-200">
+                        <button onclick="addToCart(${product.id}); closeModal('productModal');" class="w-1/2 bg-sand-100 hover:bg-sand-200 text-slate-800 font-bold py-3.5 rounded-2xl text-xs uppercase tracking-wider transition">
+                            Add to Basket
+                        </button>
+                        <button onclick="closeModal('productModal'); buyNow(${product.id});" class="w-1/2 bg-sage-600 hover:bg-sage-700 text-white font-bold py-3.5 rounded-2xl text-xs uppercase tracking-wider shadow-md transition">
+                            Buy Now
+                        </button>
+                    </div>
+                </div>
+            `;
+            openModal('productModal');
+        }
+
+        function openDeliveryCheckerModal() { openModal('deliveryModal'); }
+
+        function checkPincode() {
+            const pin = document.getElementById('pincodeInput').value.trim();
+            const status = document.getElementById('pincodeStatus');
+
+            if (pin.length === 6 && !isNaN(pin)) {
+                status.className = "text-xs p-4 rounded-2xl bg-sage-50 border border-sage-200 text-sage-900 font-medium block space-y-1";
+                status.innerHTML = `
+                    <div class="font-bold flex items-center gap-1.5 text-sage-700"><i class="fa-solid fa-circle-check"></i> Serviceable Pincode (${pin})</div>
+                    <p class="text-[11px]">Direct express shipping available. Expected delivery within 3 to 4 business days.</p>
+                `;
+            } else {
+                status.className = "text-xs p-4 rounded-2xl bg-red-50 border border-red-200 text-red-900 font-medium block";
+                status.innerHTML = `<i class="fa-solid fa-circle-exclamation text-red-600 mr-1"></i> Enter a valid 6-digit Indian Pincode.`;
+            }
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            setTimeout(() => { toast.classList.add('translate-y-24', 'opacity-0'); }, 3000);
+        }
     </script>
 </body>
 </html>
+```
