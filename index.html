@@ -640,27 +640,28 @@
     </div>
 
     <!-- JAVASCRIPT APPLICATION LOGIC -->
-    <script>
+     
+              <script>
         const products = [
             {
                 id: 1,
                 name: "Handpicked 8mm Extra Bold Green Cardamom",
                 malayalamName: "Single-Origin Jumbo Pods",
-                category: "Cardamom"
+                category: "Cardamom",
                 price: 890,
                 oldPrice: 1100,
                 rating: 4.9,
                 reviewsCount: 420,
-                image: "https://images.unsplash.com/photo-1508061253366-f7da15bbf6d4?auto=format&fit=crop&w=600&q=80,
+                image: "https://images.unsplash.com/photo-1508061253366-f7da15bbf6d4?auto=format&fit=crop&w=600&q=80",
                 badge: "Organic Grade",
                 origin: "High Ranges, Idukki Estate",
                 description: "Handpicked 8mm jumbo green pods rich in natural essential oils. 100% natural, sun-cured on estate grounds without chemical dyes."
-           },
-           {
+            },
+            {
                 id: 2,
                 name: "Wayanad Dark Roast Single-Origin Coffee Beans",
                 malayalamName: "Artisanal Wood-Roasted Robusta",
-                category: "Coffee"
+                category: "Coffee",
                 price: 480,
                 oldPrice: 600,
                 rating: 4.8,
@@ -679,7 +680,7 @@
                 oldPrice: 520,
                 rating: 4.9,
                 reviewsCount: 280,
-                image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80,
+                image: "https://images.unsplash.com/photo-1599940824399-b87987ceb72a?auto=format&fit=crop&w=600&q=80",
                 badge: "High Piperine",
                 origin: "Central Travancore Belt",
                 description: "Sun-cured heavy density black pepper. High natural piperine content giving an authentic bold aroma to your dishes."
@@ -735,7 +736,7 @@
                 oldPrice: 880,
                 rating: 4.7,
                 reviewsCount: 110,
-                image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80,
+                image: "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=600&q=80",
                 badge: "Daily Pantry",
                 origin: "Idukki Estate Harvest",
                 description: "7mm pods perfect for everyday culinary use, tea brewing, and desserts. Filled with fragrant dark seeds."
@@ -750,7 +751,6 @@
                 rating: 5.0,
                 reviewsCount: 520,
                 image: "https://images.unsplash.com/photo-153233644038-cf19250c3757?auto=format&fit=crop&w=800&q=80",
-                badge: "Luxury Gift",
                 badge: "Luxury Gift",
                 origin: "Signature Estate Collection",
                 description: "Includes 100g 8mm Cardamom, 100g Black Pepper, 100g Cloves, 250g Dark Roast Coffee & Star Anise inside a signature gift box."
@@ -806,7 +806,7 @@
                             <h3 onclick="openProductModal(${product.id})" class="font-bold text-slate-800 text-sm sm:text-base mt-2 line-clamp-2 cursor-pointer hover:text-sage-700 transition leading-snug">
                                 ${product.name}
                             </h3>
-                            <p class="text-[11px] text-slate-400 font-medium mt-0.5">${product.malayalamName}</p>
+                            <p class="text-[10px] text-slate-400 font-medium mt-0.5">${product.malayalamName}</p>
                         </div>
 
                         <div>
@@ -1136,6 +1136,7 @@
             setTimeout(() => { toast.classList.add('translate-y-24', 'opacity-0'); }, 3000);
         }
     </script>
+  
 </body>
 </html>
 ```
